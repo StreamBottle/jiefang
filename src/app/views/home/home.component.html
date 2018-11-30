@@ -1,0 +1,139 @@
+<div class="container">
+  <handle-error></handle-error>
+  <dashboard style="position:absolute;z-index:11;top:143px;left:88px" *ngIf='this.dashboardService.dashboardStatus'></dashboard>
+  <multimeter [currentShowHotArea]='this.homeService.currentShowHotArea' *ngIf='this.multimeterService.Mdata.multimeterStatus'
+    class="appinmultimeter" style="position:absolute;top:73px;left:-5px;z-index:6"></multimeter>
+  <!-- <audio autoplay id="audio" src="./assets/audios/on.mp3"></audio> -->
+  <!-- 最后一页，学习完成 -->
+  <div *ngIf='this.studyEnd' class="studyEnd">
+    <img src="./assets/images/project/studyEnd.png" alt="">
+    <span (click)='out()' class="out"></span>
+    <span (click)='back()' class="back"></span>
+  </div>
+  <div *ngIf="isvisibel" class="cover" id="header_obj">
+    <a href="javascript:;" (click)="StartPlay()"></a>
+  </div>
+  <div *ngIf="!isvisibel">
+    <div class="header f-cb">
+      <div class="title">一汽解放经销服务商</div>
+      <div class="menu">
+        <ul class="f-cb">
+          <li (click)='outTip()'>
+            <a class="f-csp"><img src="./assets/images/project/out.png" /></a>
+          </li>
+          <li (click)="ShowCom('help')">
+            <a class="f-csp"><img src="./assets/images/project/help.png" /></a>
+          </li>
+          <li>
+            <a class="f-csp" (click)="playaudio()" id="header_audio">
+              <img *ngIf='!this.isMute' src="./assets/images/project/voice.png" />
+              <img *ngIf='this.isMute' src="./assets/images/project/mute.png" />
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="main f-cb">
+      <div class="main-menu" *ngIf='this.homeService.toolNavIsShow'>
+        <ul>
+          <li (click)='measureTool("measureTool")'>
+            <a class="f-csp"><img src="./assets/images/project/tool.png" width="45%" /></a>
+          </li>
+          <li (click)='measureTool("controlCenter")'>
+            <a class="f-csp"><img src="./assets/images/project/control.png" width="45%" /></a>
+          </li>
+          <li>
+            <a class="f-csp"><img src="./assets/images/project/data.png" width="45%" /></a>
+          </li>
+        </ul>
+      </div>
+      <div class="bmain-content" *ngIf="_component  == 'help'">
+        <magotan-help [values]='_component'></magotan-help>
+      </div>
+      <div class="main-content">
+        <magotan-content [current]="this.appdataService.current"></magotan-content>
+      </div>
+    </div>
+  </div>
+  <div class="foot">
+    <div class="foot_red">
+      <div class="foot_red_pozistion">
+        <div class="triangle_border_down">
+          <span></span>
+        </div>
+      </div>
+    </div>
+    <div (click)='stop($event)' class="foot_menu f-cb">
+      <div style="width: 45px" class="f-csp" (click)="showmenu($event)"><img src="./assets/images/project/logo.png" /></div>
+      <div>|</div>
+      <div>一汽解放</div>
+      <div class="foot_Paging" style="float:right;" *ngIf="!isvisibel">
+        <ul class="f-cb">
+          <li class="f-ma4 f-csp" (click)="PrevPage()">
+            <img *ngIf='this.appdataService.current!=1' src="./assets/images/project/prev.png" />
+            <img *ngIf='this.appdataService.current==1' src="./assets/images/project/prevH.png" />
+          </li>
+          <li><input [(ngModel)]="this.appdataService.current" name="current" readonly /></li>
+          <li>/</li>
+          <li>{{total}}</li>
+          <li class="f-ma4 f-csp" (click)="NextPage()">
+            <img *ngIf='this.appdataService.content[this.appdataService.current].isPaging&&this.appdataService.current<this.appdataService.content.length-1'
+              src="./assets/images/project/next.png" />
+            <img *ngIf='!this.appdataService.content[this.appdataService.current].isPaging||this.appdataService.current==this.appdataService.content.length-1'
+              src="./assets/images/project/nextH.png" />
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="course_menue" (click)='stop($event)' id="niceScroll" *ngIf='this.appdataService.menueIsShow'>
+    <h2>课程目录</h2>
+    <ul class="catalogNav">
+      <ng-template ngFor let-item [ngForOf]='Catalogdata'>
+        <li (click)='isChildNavShow(item)'>
+          <div>{{item.navTitle}}</div>
+          <div>
+            <img *ngIf='!item.isExistence' src="./assets/images/project/arrowLeft.png" alt="">
+            <img style="margin:5px 0 0 0" *ngIf='item.isExistence' src="./assets/images/project/arrowDown.png" alt="">
+          </div>
+        </li>
+        <ul class="childNav" *ngIf='item.isExistence'>
+          <ng-template ngFor let-childItem [ngForOf]='item.isChildNav'>
+            <li (click)='isChildNavShow(childItem)'>
+              <div>{{childItem.title}}</div>
+              <div>
+                <img *ngIf='childItem.studyState=="1"' src="./assets/images/project/unlearned.png" alt="">
+                <img *ngIf='childItem.studyState=="2"' src="./assets/images/project/studying.png" alt="">
+                <img *ngIf='childItem.studyState=="3"' src="./assets/images/project/finishStudying.png" alt="">
+              </div>
+            </li>
+          </ng-template>
+        </ul>
+      </ng-template>
+    </ul>
+  </div>
+
+
+  <!-- 工具箱下面的子内容 -->
+  <div class="tool" *ngIf='this.homeService.toolIsShow'>
+    <ul>
+      <li class="multimeters" (click)="toolShow('multimeters')">
+        <span *ngIf='this.homeService.multimeterTaskIsShow'></span>
+      </li>
+    </ul>
+  </div>
+
+  <!-- 校表动画 -->
+  <div class="xiaob">
+    <div class="alert">
+      <h1>
+      </h1>
+      <p>使用万用表前请先校表</p>
+      <button (click)="isPlay()">确认</button>
+    </div>
+  </div>
+</div>
+<!-- 退出弹窗 -->
+<div class="outTip" *ngIf='this.outTipIsShow'>
+  <close-window (publishEvent)='changeParam()'></close-window>
+</div>

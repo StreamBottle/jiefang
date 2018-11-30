@@ -1,0 +1,127 @@
+@charset "UTF-8";
+html,
+body {
+  height: 100%;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+span.active {
+  background-color: gray;
+}
+
+body,
+div,
+dl,
+dt,
+dd,
+ul,
+ol,
+li,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+pre,
+code,
+form,
+fieldset,
+legend,
+input,
+button,
+textarea,
+blockquote,
+th,
+td,
+p {
+  margin: 0;
+  border: none;
+  padding: 0;
+  background: none;
+  -moz-user-select: none;
+  /*火狐*/
+  -webkit-user-select: none;
+  /*webkit浏览器*/
+  -ms-user-select: none;
+  /*IE10*/
+  -khtml-user-select: none;
+  /*早期浏览器*/
+  user-select: none;
+  font-family: Microsoft YaHei !important;
+}
+
+input,
+button,
+select,
+textarea {
+  outline: none;
+}
+
+li {
+  list-style: none;
+}
+
+img {
+  border: none;
+}
+
+textarea {
+  resize: none;
+}
+
+body {
+  word-wrap: break-word;
+  word-break: break-all;
+  color: #000;
+  background: #fff;
+}
+
+body {
+  margin: 0 auto;
+  width: 100%;
+  height: auto;
+}
+
+body,
+input,
+textarea,
+button {
+  font-family: \5FAE\8F6F\96C5\9ED1, Verdana, Arial;
+  font-size: 14px;
+}
+
+a {
+  text-decoration: none;
+  color: #305999;
+  outline: none;
+}
+
+* {
+  word-break: break-word;
+}
+
+
+/*comm========================================================================================================*/
+
+.hide-important {
+  display: none !important;
+}
+
+.cursor-pointer {
+  cursor: pointer;
+}
+
+/*# sourceMappingURL=comm.css.map */
+
+.z-index-100 {
+  z-index: 100;
+}
+
+.opacity {
+  opacity: 0;
+}
+
+.hidden {
+  display: none;
+}

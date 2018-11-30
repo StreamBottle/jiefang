@@ -1,0 +1,19 @@
+<div *ngIf="!data?.currentState?.mouseoverPrompt01&&!(data.currentStyle?.display==='none')">
+  <div class="com-button" [ngStyle]="setStyle()" *ngIf="!(data.currentStyle?.display==='none')" [@halo]="data?.currentState?.animation?.animationOnID"
+    [@flyIn]="data?.currentState?.animation?.animationOnIDFlyInTextAfter">
+    {{data.currentStyle.innerHTML}}
+  </div>
+  <span *ngFor="let item of data?.currentState?.textArray" [@flyIn]="data?.currentState?.animation?.animationOnIDFlyIn" [ngStyle]="setTextStyle(item)">
+    <br *ngIf="item?.isLF">{{item?.content}}</span>
+</div>
+
+<div *ngIf="data?.currentState?.mouseoverPrompt01&&!(data.currentStyle?.display==='none')" [ngStyle]='mouseoverPrompt()'
+  class='mouseover'>
+  <span class='prompt01'>{{data.currentState.mouseoverPrompt01Style.text}}</span>
+  <div class="com-button" [ngStyle]="setStyle()" *ngIf="!(data.currentStyle?.display==='none')" [@halo]="data?.currentState?.animation?.animationOnID"
+    [@flyIn]="data?.currentState?.animation?.animationOnIDFlyInTextAfter">
+    {{data.currentStyle.innerHTML}}
+  </div>
+  <span *ngFor="let item of data?.currentState?.textArray" [@flyIn]="data?.currentState?.animation?.animationOnIDFlyIn" [ngStyle]="setTextStyle(item)">
+    <br *ngIf="item?.isLF">{{item?.content}}</span>
+</div>

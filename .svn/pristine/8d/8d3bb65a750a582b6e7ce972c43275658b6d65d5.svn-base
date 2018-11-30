@@ -1,0 +1,4 @@
+<div class="contrlcenter">
+    <span (click)='switchCar("on")' class="on"></span>
+    <div class="oilMeterPointer" [@flyIn]='this.changeRotate'></div>
+</div>

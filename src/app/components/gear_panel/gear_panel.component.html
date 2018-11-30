@@ -1,0 +1,19 @@
+<!--档位操控面板-->
+<div class="gear-wrap dragSource z-index-100">
+  <button class="close cursor-pointer" (click)=" closeSwitchPanel('pedal') ">X</button>
+
+  <div class="state-wrap">
+    <span class="stateR cursor-pointer" (click)="switchGear(1,'.stateR',R)">R</span>
+    <span class="stateN cursor-pointer" (click)="switchGear(2,'.stateN',N)">N</span>
+    <span class="stateD1 cursor-pointer" (click)="switchGear(3,'.stateD1',D)">D</span>
+  </div>
+  <div class="gear-switch"></div>
+  <div class="gear-accelerator">
+    <div class="accelerator"></div>
+  </div>
+  <!--<audio *ngIf="isaudio == '3'" autoplay="autoplay" loop="loop" src="./assets/audios/bk1500.mp3" style="width: 0; height: 0;"></audio>
+  <audio *ngIf="isaudio == '4'" autoplay="autoplay" loop="loop" src="./assets/audios/bk2500.mp3" style="width: 0; height: 0;"></audio>
+  <audio *ngIf="isaudio == '5'" autoplay="autoplay" loop="loop" src="./assets/audios/bk3500.mp3" style="width: 0; height: 0;"></audio>-->
+  <div class="gear-brake" (click)="brakeOn('.gear-brake')"></div>
+
+</div>

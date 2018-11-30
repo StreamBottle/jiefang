@@ -1,0 +1,16 @@
+.handle-error-body {
+  width: 18%;
+  height: 14%;
+  position: absolute;
+  font-size: .2rem;
+  font-weight: bold;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+  background: url("./images/popup.png") no-repeat;
+  background-size: 100% 100%;
+}
+
+/*# sourceMappingURL=handle_error.component.css.map */

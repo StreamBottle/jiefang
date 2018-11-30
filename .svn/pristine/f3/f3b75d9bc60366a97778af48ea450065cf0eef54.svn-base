@@ -1,0 +1,292 @@
+<?xml version="1.0" encoding="utf-8"?>
+<fault>
+    <metadata>
+        <schema>XCJ</schema>
+        <schemaversion>1.0</schemaversion>
+    </metadata>
+    <name>一汽解放经销服务商</name>
+    <courseNumber>FAW-P-WBT-002</courseNumber>
+    <type>wbt</type>
+    <types>wbtCourseWare</types>
+    <purpose>2018htis系统课件xml</purpose>
+    <require>无</require>
+    <keyword>一汽解放经销服务商</keyword>
+    <language>中文</language>
+    <version>V0.1</version>
+    <description>无</description>
+    <client>PC</client>
+    <isSchool>1</isSchool>
+	<!-- 总分 -->
+    <sumScore>100</sumScore>
+	<!-- 通过条件 -->
+    <passCondition>50</passCondition>
+	<!-- 完成条件 -->
+    <completeCondition>60</completeCondition>
+    <entry>index.html</entry>
+    <progresses>
+    </progresses>
+	<chapters>
+		<chapter id="chapter01" description="scene">
+			<chapter id="chapter01_01" description="客户描述">
+				<!-- time代表建议学习时间，单位s -->
+				<page id="chapter01_01_page_01" description="客户描述页面一" time="30"></page>
+				<!-- 章节允许学习时间，需要即定义，不需要不用定义 -->
+				<condition show="before"></condition>
+				<condition show="in"></condition>
+				<condition show="after"></condition>
+			</chapter>
+			<chapter id="chapter01_02" description="课程目标" >
+				<!-- time代表建议学习时间，单位s -->
+				<page id="chapter01_02_page_01" description="课程目标页面一" time="30"></page>
+				<condition show="before"></condition>
+				<condition show="in"></condition>
+				<condition show="after"></condition>
+			</chapter>
+			<!-- 如果父目录下存在页面就定义，没有不用定义 -->
+			<!-- <page id="chapter01_page_01" description="页面一" time="30"></page>
+			<page id="chapter01_page_02" description="页面二" time="60"></page> -->
+			<!-- 章节允许学习时间，需要即定义，不需要不用定义 -->
+			<condition show="before"></condition>
+			<condition show="in"></condition>
+			<condition show="after"></condition>
+		</chapter>
+
+
+		<chapter id="chapter02" description="knowledge">
+			<chapter id="chapter02_01" description="功能">
+				<!-- time代表建议学习时间，单位s -->
+				<page id="chapter02_01_page_01" description="功能页面一" time="30"></page>
+				<!-- 章节允许学习时间，需要即定义，不需要不用定义 -->
+				<condition show="before"></condition>
+				<condition show="in"></condition>
+				<condition show="after"></condition>
+			</chapter>
+			<chapter id="chapter02_02" description="分类" >
+				<!-- time代表建议学习时间，单位s -->
+				<page id="chapter02_02_page_01" description="分类页面一" time="30"></page>
+				<condition show="before"></condition>
+				<condition show="in"></condition>
+				<condition show="after"></condition>
+			</chapter>
+
+			<!-- 如果父目录下存在页面就定义，没有不用定义 -->
+			<!-- <page id="chapter02_page_01" description="页面一" time="30"></page>
+			<page id="chapter02_page_02" description="页面二" time="60"></page> -->
+
+			<!-- 章节允许学习时间，需要即定义，不需要不用定义 -->
+			<condition show="before"></condition>
+			<condition show="in"></condition>
+			<condition show="after"></condition>
+		</chapter>
+		
+		
+		<chapter id="chapter03" description="skill">
+			<chapter id="chapter03_01" description="任务1">
+				<page id="chapter03_01_page_01" description="维修工单页面一" time="30"></page>
+				<page id="chapter03_01_page_02" description="维修工单页面一" time="30"></page>
+				<page id="chapter03_01_page_03" description="维修工单页面一" time="30"></page>
+				<page id="chapter03_01_page_04" description="维修工单页面一" time="30"></page>
+				<page id="chapter03_01_page_05" description="维修工单页面一" time="30"></page>
+				<page id="chapter03_01_page_06" description="维修工单页面一" time="30"></page>
+				
+				<!-- time代表建议学习时间，单位s -->
+				<!-- <page id="chapter03_01_page_01" description="页面一" time="30"></page> -->
+				<!-- 章节允许学习时间，需要即定义，不需要不用定义 -->
+				<condition show="before"></condition>
+				<condition show="in"></condition>
+				<condition show="after"></condition>
+			</chapter>
+			<chapter id="chapter03_02" description="任务2">
+
+				<page id="chapter03_02_page_01" description="维修工单页面一" time="30"></page>
+				<page id="chapter03_02_page_02" description="维修工单页面一" time="30"></page>
+				<page id="chapter03_02_page_03" description="维修工单页面一" time="30"></page>
+				<page id="chapter03_02_page_04" description="维修工单页面一" time="30"></page>
+				<page id="chapter03_02_page_05" description="维修工单页面一" time="30"></page>
+				<page id="chapter03_02_page_06" description="维修工单页面一" time="30"></page>
+				
+				<!-- time代表建议学习时间，单位s -->
+				<!-- <page id="chapter03_02_page_01" description="页面一" time="30"></page> -->
+				<!-- 章节允许学习时间，需要即定义，不需要不用定义 -->
+				<condition show="before"></condition>
+				<condition show="in"></condition>
+				<condition show="after"></condition>
+			</chapter>
+			<chapter id="chapter03_03" description="任务3">
+				<page id="chapter03_03_page_01" description="维修工单页面一" time="30"></page>
+				<page id="chapter03_03_page_02" description="维修工单页面一" time="30"></page>
+				<page id="chapter03_03_page_03" description="维修工单页面一" time="30"></page>
+				<page id="chapter03_03_page_04" description="维修工单页面一" time="30"></page>
+				<page id="chapter03_03_page_05" description="维修工单页面一" time="30"></page>
+				<page id="chapter03_03_page_06" description="维修工单页面一" time="30"></page>
+				<!-- time代表建议学习时间，单位s -->
+				<!-- <page id="chapter03_03_page_01" description="页面一" time="30"></page> -->
+				<!-- 章节允许学习时间，需要即定义，不需要不用定义 -->
+				<condition show="in"></condition>
+				<condition show="after"></condition>
+			</chapter>
+			<chapter id="chapter03_07" description="实车训练任务">
+				<!-- time代表建议学习时间，单位s -->
+				<page id="chapter03_07_page_01" description="实车训练页面一" time="30"></page>
+				<page id="chapter03_07_page_02" description="实车训练页面2" time="30"></page>
+				<page id="chapter03_07_page_03" description="实车训练页面3" time="30"></page>
+				<page id="chapter03_07_page_04" description="实车训练页面3" time="30"></page>
+				<page id="chapter03_07_page_05" description="实车训练页面3" time="30"></page>
+				<page id="chapter03_07_page_06" description="实车训练页面3" time="30"></page>
+				<page id="chapter03_07_page_07" description="实车训练页面3" time="30"></page>
+				<condition show="before"></condition>
+				<condition show="in"></condition>
+				<condition show="after"></condition>
+			</chapter>
+
+			<!-- 如果父目录下存在页面就定义，没有不用定义 -->
+			<!-- <page id="chapter03_page_01" description="页面一" time="30"></page>
+			<page id="chapter03_page_02" description="页面二" time="60"></page> -->
+
+			<!-- 章节允许学习时间，需要即定义，不需要不用定义 -->
+			<condition show="before"></condition>
+			<condition show="in"></condition>
+			<condition show="after"></condition>
+		</chapter>
+	
+	
+		<chapter id="chapter04" description="result">
+			<chapter id="chapter04_01" description="知识">
+				<!-- time代表建议学习时间，单位s -->
+				<page id="chapter04_01_page_01" description="页面一" time="30"></page>
+				<!-- 章节允许学习时间，需要即定义，不需要不用定义 -->
+				<condition show="in"></condition>
+				<condition show="after"></condition>
+			</chapter>
+			<chapter id="chapter04_02" description="任务1">
+				<page id="chapter04_02_page_01" description="维修工单页面一" time="30"></page>
+				<page id="chapter04_02_page_02" description="维修工单页面一" time="30"></page>
+				<page id="chapter04_02_page_03" description="维修工单页面一" time="30"></page>
+				<page id="chapter04_02_page_04" description="维修工单页面一" time="30"></page>
+				<page id="chapter04_02_page_05" description="维修工单页面一" time="30"></page>
+				<page id="chapter04_02_page_06" description="维修工单页面一" time="30"></page>
+				<!-- time代表建议学习时间，单位s -->
+				<!-- <page id="chapter04_02_page_01" description="页面一" time="30"></page> -->
+				<!-- 章节允许学习时间，需要即定义，不需要不用定义 -->
+				<condition show="before"></condition>
+				<condition show="in"></condition>
+				<condition show="after"></condition>
+			</chapter>
+			
+			<!-- 如果父目录下存在页面就定义，没有不用定义 -->
+			<!-- <page id="chapter04_page_01" description="页面一" time="30"></page>
+			<page id="chapter04_page_02" description="页面二" time="60"></page> -->
+
+			<!-- 章节允许学习时间，需要即定义，不需要不用定义 -->
+			<condition show="before"></condition>
+			<condition show="in"></condition>
+			<condition show="after"></condition>
+		</chapter>
+	</chapters>
+
+    <questions>
+		<question catalog="skill" description="案例导入测评" id="skill" remark="">
+
+			<question catalog="" name='技能-实车训练' courseNumber='CC-EV-XCJ-DMS-071_test0713_005' description="1、实车观察制动踏板行程传感器的安装位置。参考电路图，观察制动踏板行程传感器线束颜色，并填写下表。" id="skill_008" type = "11" url="">
+				<question description="" id="skill_008_001" url="" type="3">
+					<question description="" id="skill_008_001_001" url="">
+						<description>
+							<td>针脚</td>
+							<td>线色</td>
+							<td>功能</td>
+						</description>
+					</question>
+					<question description="" id="skill_008_001_002" url="">
+						<description>
+							<td></td>
+							<td></td>
+							<td></td>
+						</description>
+						<option id="skill_008_001_002_001" description="4v" isRight="1" index="1"></option>
+						<option id="skill_008_001_002_002" description="5v" isRight="1" index="2"></option>
+						<option id="skill_008_001_002_003" description="5v" isRight="1" index="3"></option>
+					</question>
+					<question description="" id="skill_008_001_003" url="">
+						<description>
+							<td></td>
+							<td></td>
+							<td></td>
+						</description>
+						<option id="skill_008_001_003_001" description="4v" isRight="1" index="1"></option>
+						<option id="skill_008_001_003_002" description="5v" isRight="1" index="2"></option>
+						<option id="skill_008_001_003_003" description="5v" isRight="1" index="3"></option>
+					</question>
+					<question description="" id="skill_008_001_004" url="">
+						<description>
+							<td></td>
+							<td></td>
+							<td></td>
+						</description>
+						<option id="skill_008_001_004_001" description="4v" isRight="1" index="1"></option>
+						<option id="skill_008_001_004_002" description="5v" isRight="1" index="2"></option>
+						<option id="skill_008_001_004_003" description="5v" isRight="1" index="3"></option>
+					</question>
+				</question>
+			</question>
+
+			
+	       <question catalog="" name='技能-实车训练' courseNumber='CC-EV-XCJ-DMS-071_test0713_005' description="" id="skill_009" type="10" url="">
+				<question id="skill_009_001" description="2、参考电路图，制动踏板行程传感器的电源由$XCJ$提供，共有$XCJ$根线束，第$XCJ$脚是供电，第$XCJ$脚是搭铁，第$XCJ$是信号线。" type="9" url="">
+					<option id="skill_009_001_a001"  description="3V" isRight="1" index="1"></option>
+					<option id="skill_009_001_a002"  description="3V" isRight="1" index="2"></option>
+					<option id="skill_009_001_a003"  description="3V" isRight="1" index="3"></option>
+					<option id="skill_009_001_a004"  description="3V" isRight="1" index="4"></option>
+					<option id="skill_009_001_a005"  description="3V" isRight="1" index="5"></option>
+				</question>
+		  </question>
+
+	       <question catalog="" name='技能-实车训练' record="0" courseNumber='CC-EV-XCJ-DMS-071_test0713_005' description="3、实车进行制动踏板行程传感器的拆装，并记录拆装要点。" id="skill_010" type="1" url=""></question>
+		</question>
+
+
+		<question catalog="exam" description="案例导入测评" id="exam" remark="">
+
+			<question catalog="" name='测评-知识' courseNumber='CC-EV-XCJ-DMS-071_test0713_007' description="1、制动踏板行程传感器的作用是什么？" id="exam_002" type="1">
+				<option id="exam_002_p1" description="监测驾驶员踩下制动踏板行程的大小" isRight="1"></option>
+				<option id="exam_002_p2" description="监测驾驶员踩下制动踏板的力度" isRight="0"></option>
+				<option id="exam_002_p3" description="监测驾驶员是否踩下制动踏板" isRight="0"></option>
+				<option id="exam_002_p4" description="监测制动灯是否点亮" isRight="0"></option>
+			</question>
+			<question catalog="" name='测评-知识' courseNumber='CC-EV-XCJ-DMS-071_test0713_007' description="2、制动踏板行程传感器故障会导致什么后果？" id="exam_003" type="1">
+				<option id="exam_003_p1" description="车辆无法行驶" isRight="0"></option>
+				<option id="exam_003_p2" description="车辆无法进行能量回收" isRight="1"></option>
+				<option id="exam_003_p3" description="车辆进入跛行模式" isRight="0"></option>
+				<option id="exam_003_p4" description="车辆无法上电" isRight="0"></option>
+			</question>
+			<question catalog="" name='测评-知识' courseNumber='CC-EV-XCJ-DMS-071_test0713_007' description="3、制动踏板行程传感器一般有哪几种形式？（多选）" id="exam_004" type="2">
+				<option id="exam_004_p1" description="滑动电阻式" isRight="1"></option>
+				<option id="exam_004_p2" description="霍尔式" isRight="1"></option>
+				<option id="exam_004_p3" description="光电式" isRight="0"></option>
+				<option id="exam_004_p4" description="电磁式" isRight="0"></option>
+			</question>
+		</question>
+    </questions>
+	<!-- 题目分数 -->
+	<scores>
+		<score type="question" id="q01" hid="skill_008_001" rate="1" kp="">
+		</score>
+		<score type="question" id="q02" hid="skill_009" rate="5" kp="">
+		</score>
+		
+		
+		
+		<score type="question" id="q03" hid="exam_002" rate="2" kp="">
+			<option>exam_002_p1</option>
+		</score>
+
+		<score type="question" id="q04" hid="exam_003" rate="2" kp="">
+			<option>exam_003_p2</option>
+		</score>
+
+		<score type="question" id="q05" hid="exam_004" rate="2" kp="">
+			<option>exam_004_p1</option>
+			<option>exam_004_p2</option>
+		</score>
+		
+	</scores>
+</fault>

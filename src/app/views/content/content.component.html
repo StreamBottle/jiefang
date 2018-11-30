@@ -1,0 +1,604 @@
+<!-- <div class="type_width" *ngIf="appboolen.type_three">
+    <video src="{{typevideo[0].mp4}}" id="type_three_video" height="380"></video>
+    <div class="returnimg f-csp" (click)="ClickShow('1')"><img src="./assets/images/project/img15_2.png" /></div>
+</div>
+
+<div class="type_seven" *ngIf="appboolen.type_seven">
+    <div class="f-cb" [ngStyle]='{"padding-top":typetip[0].top}'>
+        <div class="table">
+            <table>
+                <tr *ngFor="let data of typetip; let i = index;">
+                    <td>{{data.title}}</td>
+                    <td>{{data.content}}</td>
+                </tr>
+                <tr *ngFor="let data of typetextlist; let i = index;">
+                    <td class="f-cpt" (click)="ClickDisplay(i,'seven')">{{data.title}}</td>
+                    <td *ngIf="data.boolen">{{data.content}}</td>
+                </tr>
+            </table>
+        </div>
+        <div class="img"><img src="{{typeimglist[0].img}}" /></div>
+    </div>
+    <div class="tip f-cb" *ngIf="!isPaging">
+        <div class="move-twinkle f-fl" id="type_seven_pointer"><img src="./assets/images/project/pointer.jpg" width="20px" /></div>
+        <div class="f-fl" style="padding-top:5px;padding-left:20px;">请用鼠标点击参数名称</div>
+    </div>
+</div>
+
+<div class="type_eight" *ngIf="appboolen.type_eight">
+    <div *ngFor="let data of typeeightcheck; let i = index;">
+        <div *ngIf="data.isvisible">
+            <div class="main">
+                <div class="title">{{data.title}}<span>({{data.check}})</span></div>
+                <div class="f-cb bottom">
+                    <div class="left">
+                        <table>
+                            <tr *ngFor="let item of data.content; let x = index;">
+                                <td (click)="CheckOn(i,x,data.check)">
+                                    <div class="f-csp" id="check_{{i}}_{{x}}">{{item.title}}</div>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                    <div class="right" *ngIf="typeeightimgis"><img src="{{typeeightimg[0].img}}" /></div>
+                </div>
+            </div>
+            <div class="button"><button class="f-csp" (click)="SummitBox(i,data.content)">提交</button></div>
+            <div class="error" *ngIf="typeeighterror">* 错误啦 !</div>
+            <div class="error" *ngIf="typeeightright">* 正确,可以翻页啦 !</div>
+        </div>
+    </div>
+</div>
+
+<div class="type_fifteen" *ngIf="appboolen.type_fifteen">
+    <div class="main" id="dragarea">
+        <div class="title">DNR执行器的组成</div>
+        <div class="f-cb">
+            <div class="left" id="draggable">
+                <div class="blockdiv" *ngFor="let data of typetextlist; let i = index;" id="draggable_{{i}}">{{data.title}}</div>
+            </div>
+            <div class="right">
+                <img src="{{typeimglist[0].img}}" />
+                <ul id="Droppable">
+                    <li *ngFor="let data of typetextlist; let i = index;" [ngStyle]='{"left":typetextlist[i].left,"top":typetextlist[i].top}' id="droppable_{{i}}"></li>
+                    <div *ngFor="let data of typetip; let i = index;" [ngStyle]='{"left":typetip[i].left,"top":typetip[i].top}'></div>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="button"><button (click)="Summitdrag()">提交</button></div>
+    <div class="error" *ngIf="isvisibles == '1'">* 错误啦 !</div>
+    <div class="error" *ngIf="isvisibletwo == '1'">* 正确,可以翻页啦 !</div>
+</div> -->
+<!-- 点击出现弹框 -->
+<!-- [twinkle]="'twinkle'" 闪烁指令 -->
+<div class="type_thirtyeight" *ngIf="appboolen.type_thirtyeight">
+  <img class="f-mc g-wA80 f-pt60" src="{{typedescribe}}" />
+  <ul>
+    <ng-template ngFor let-i='index' let-item [ngForOf]='typetextlist'>
+      <li (click)='tipShow(item,i,true)' [twinkle]="item.twinkle" [ngStyle]='item.style'></li>
+      <div *ngIf='item.isShow' [ngStyle]='item.content.style'>{{item.content.text}}</div>
+    </ng-template>
+  </ul>
+</div>
+<!-- 课程目标等静态页面 -->
+<div class="type-text" *ngIf='appboolen.type_text'>
+  <img [ngStyle]='typeimglist[0].imgStyle' src="{{typeimglist[0].img}}" alt="">
+  <ng-template ngFor let-item [ngForOf]='this.typetextlist'>
+    <div [ngStyle]='item.titleStyle'>{{item.title}}</div>
+  </ng-template>
+</div>
+<!-- 现场管理等静态页面 -->
+<div class="type-icontext" *ngIf='appboolen.type_icontext'>
+  <img [ngStyle]='typeimglist[0].imgStyle' src="{{typeimglist[0].img}}" alt="">
+  <ul class="icontextlist">
+    <ng-template ngFor let-item [ngForOf]='this.typetextlist'>
+      <li>
+        <div *ngIf='item.isShow' [ngStyle]='item.oneDivStyle' class="one"></div>
+        <div [ngStyle]='item.style' class="two">{{item.text}}</div>
+      </li>
+      <!-- <img *ngIf='btnitem.imgShow' [ngStyle]='btnitem.srcStyle' src="{{btnitem.src}}" alt=""> -->
+    </ng-template>
+  </ul>
+</div>
+<!-- 课程目标等静态页面 -->
+<div class="type-changeText" *ngIf='appboolen.type_changeText'>
+  <img [ngStyle]='typeimglist[0].imgStyle' src="{{typeimglist[0].img}}" alt="">
+  <ng-template ngFor let-item [ngForOf]='this.typetitlelist'>
+    <div [ngStyle]='item.titleStyle'>{{item.title}}</div>
+  </ng-template>
+  <ng-template ngFor let-i='index' let-btnitem [ngForOf]='this.typebtnlist'>
+    <div [ngStyle]='btnitem.style' (click)='tipContentShow($event,typebtnlist,i)'>{{btnitem.text}}</div>
+    <ul *ngIf='btnitem.isShow'>
+      <img [ngStyle]='btnitem.arrowStyle' src="./assets/images/project/arrow1.png" alt="">
+      <ng-template ngFor let-btnContentItem [ngForOf]='btnitem.content'>
+        <li [ngStyle]='btnContentItem.style'>{{btnContentItem.text}}</li>
+      </ng-template>
+    </ul>
+  </ng-template>
+</div>
+
+<!-- 岗位描述等静态页面 -->
+<div class="type_imgText" *ngIf='appboolen.type_imgText'>
+  <div class="nav">
+    <ng-template ngFor let-i='index' let-item [ngForOf]='typetextlist[0].navText'>
+      <span (click)='rotateNav(item,i)' [ngStyle]='item.style'>{{item.text}}</span>
+    </ng-template>
+  </div>
+  <ng-template ngFor let-='index' let-item [ngForOf]='typetextlist[0].content'>
+    <div *ngIf='item.isShow'>
+      <div [ngStyle]='item.style'>
+        <ng-template ngFor let-i='index' let-item [ngForOf]='item.contentTitleList'>
+          <div [ngStyle]='item.style'>{{item.text}}</div>
+        </ng-template>
+        <div class="stickborder"></div>
+      </div>
+      <ul [ngStyle]='item.style'>
+        <ng-template ngFor let-i='index' let-item [ngForOf]='item.contentTextList'>
+          <li>
+            <div [twinkle]="item.twinkle" *ngIf='item.isShow' [ngStyle]='item.oneDivStyle' class="one"></div>
+            <div class="two" [ngStyle]='item.style'>{{item.text}}</div>
+          </li>
+        </ng-template>
+      </ul>
+    </div>
+  </ng-template>
+  <ng-template ngFor let-i='index' let-item [ngForOf]='typetextlist[0].btnText'>
+    <div class="btn" *ngIf='item.isShow'>
+      <ul>
+        <ng-template ngFor let-i='index' let-item [ngForOf]='item.btnTextList'>
+          <li (click)='rotate($event,item.direction)' [ngStyle]='item.style'>{{item.text}}</li>
+        </ng-template>
+      </ul>
+    </div>
+  </ng-template>
+  <ng-template ngFor let-i='index' let-item [ngForOf]='typetextlist[0].anatomyText'>
+    <div class="anatomy" *ngIf='item.isShow'>
+      <ul>
+        <ng-template ngFor let-i='index' let-item [ngForOf]='item.anatomyTextList'>
+          <li (click)='anatomyShow(item,i)' [ngStyle]='item.style'>
+            {{item.text}}
+          </li>
+        </ng-template>
+      </ul>
+    </div>
+  </ng-template>
+  <div *ngIf='this.appdataService.content[this.current].rotateImgIsShow' class="tip">
+    <ng-template ngFor let-i='index' let-item [ngForOf]='typetextlist[0].imglist'>
+      <div *ngIf='item.isShow'>
+        <!-- <img [ngStyle]='item.style' src="{{item.backgroundList[0].src}}" alt=""> -->
+        <img class="changjing" [ngStyle]='item.style' src="{{item.contentList[0].src}}" alt="">
+        <img class="changjing1" src="./assets/images/project/changjing1.png" alt="">
+        <img class="changjing2" src="./assets/images/project/changjing2.png" alt="">
+        <ul>
+          <ng-template ngFor let-i='index' let-item [ngForOf]='item.contentList'>
+            <span *ngIf='item.isShow'>
+              <ng-template ngFor let-i='index' let-item [ngForOf]='item.textlist'>
+                <li (click)='tipShow(item,i,false)' [twinkle]="item.twinkle" [ngStyle]='item.style'></li>
+                <div *ngIf='item.isShow' [ngStyle]='item.content.style'>{{item.content.text}}</div>
+              </ng-template>
+            </span>
+          </ng-template>
+        </ul>
+      </div>
+    </ng-template>
+  </div>
+  <div class="childPage" *ngIf='this.appdataService.content[this.current].anatomyIsShow'>
+    <img src="{{typetextlist[0].tiplist.src}}" alt="">
+    <ul>
+      <ng-template ngFor let-i='index' let-childitem [ngForOf]='typetextlist[0].tiplist.textlist'>
+        <div class="childtitle" *ngIf='childitem.isShow'>{{childitem.title}}</div>
+        <li class="anatomyDot" (click)='tipShow(childitem,i,false)' [ngStyle]='childitem.style'></li>
+        <div class="contain" *ngIf='childitem.isShow'>
+          <div (click)='childCloseTip(childitem)' class="childClose"></div>
+          <div style="top:110px" class="nav">
+            <ng-template ngFor let-i='index' let-item [ngForOf]='childitem.childPage.navText'>
+              <span (click)='childRotateNav(childitem,i)' [ngStyle]='item.style'>{{item.text}}</span>
+            </ng-template>
+          </div>
+          <ng-template ngFor let-='index' let-item [ngForOf]='childitem.childPage.content'>
+            <div class="text" *ngIf='item.isShow'>
+              <ul [ngStyle]='item.style'>
+                <ng-template ngFor let-i='index' let-item [ngForOf]='item.contentTextList'>
+                  <li>
+                    <div *ngIf='item.isShow' [ngStyle]='item.oneDivStyle'></div>
+                    <div [ngStyle]='item.style'>{{item.text}}</div>
+                  </li>
+                </ng-template>
+              </ul>
+            </div>
+          </ng-template>
+          <ng-template ngFor let-i='index' let-item [ngForOf]='childitem.childPage.btnText'>
+            <div class="childBtn" *ngIf='item.isShow'>
+              <ul>
+                <ng-template ngFor let-i='index' let-item [ngForOf]='item.btnTextList'>
+                  <li (click)='childRotate($event,item,childitem)' [ngStyle]='item.style'>{{item.text}}</li>
+                </ng-template>
+              </ul>
+            </div>
+          </ng-template>
+          <div class="tip">
+            <ng-template ngFor let-i='index' let-item [ngForOf]='childitem.childPage.imglist'>
+              <div *ngIf='item.isShow'>
+                <img src="{{item.contentList[0].src}}" alt=""> {{item.contentList.textlist}}
+                <ul>
+                  <ng-template ngFor let-i='index' let-item [ngForOf]='item.contentList'>
+                    <span *ngIf='item.isShow'>
+                      <ng-template ngFor let-i='index' let-item [ngForOf]='item.textlist'>
+                        <li [twinkle]="item.twinkle" (click)='tipShow(item,i,false)' [ngStyle]='item.style'></li>
+                        <div *ngIf='item.isShow' [ngStyle]='item.content.style'>{{item.content.text}}</div>
+                      </ng-template>
+                    </span>
+                  </ng-template>
+                </ul>
+              </div>
+            </ng-template>
+          </div>
+        </div>
+      </ng-template>
+    </ul>
+  </div>
+  <ng-template ngFor let-i='index' let-item [ngForOf]='typetextlist[0].measureList'>
+    <div *ngIf='item.isShow'>
+      <test-questions [chapter]='item.chapter'></test-questions>
+    </div>
+  </ng-template>
+</div>
+
+<!-- 点击旋转 -->
+<div class="type_exclusive" *ngIf='appboolen.type_exclusive'>
+  <div class="nav">
+    <ng-template ngFor let-i='index' let-item [ngForOf]='typetextlist[0].navText'>
+      <span (click)='rotateNav(item,i)' [ngStyle]='item.style'>{{item.text}}</span>
+    </ng-template>
+  </div>
+  <ng-template ngFor let-='index' let-item [ngForOf]='typetextlist[0].content'>
+    <div *ngIf='item.isShow'>
+      <ul [ngStyle]='item.style'>
+        <ng-template ngFor let-i='index' let-item [ngForOf]='item.contentTextList'>
+          <li>
+            <div *ngIf='item.isShow' [ngStyle]='item.oneDivStyle' class="one"></div>
+            <div class="two" [ngStyle]='item.style'>{{item.text}}</div>
+          </li>
+        </ng-template>
+      </ul>
+    </div>
+  </ng-template>
+  <ng-template ngFor let-i='index' let-item [ngForOf]='typetextlist[0].btnText'>
+    <div class="btn" *ngIf='item.isShow'>
+      <ul>
+        <ng-template ngFor let-i='index' let-item [ngForOf]='item.btnTextList'>
+          <li (click)='rotate($event,item.direction)' [ngStyle]='item.style'>{{item.text}}</li>
+        </ng-template>
+      </ul>
+    </div>
+  </ng-template>
+  <ng-template ngFor let-i='index' let-item [ngForOf]='typetextlist[0].anatomyText'>
+    <div class="anatomy" *ngIf='item.isShow'>
+      <ul>
+        <ng-template ngFor let-i='index' let-item [ngForOf]='item.anatomyTextList'>
+          <li (click)='anatomyShow(item,i)' [ngStyle]='item.style'>
+            {{item.text}}
+          </li>
+        </ng-template>
+      </ul>
+    </div>
+  </ng-template>
+  <div *ngIf='this.appdataService.content[this.current].rotateImgIsShow' class="tip">
+    <ng-template ngFor let-i='index' let-item [ngForOf]='typetextlist[0].imglist'>
+      <div *ngIf='item.isShow'>
+        <img [ngStyle]='item.style' src="{{item.contentList[0].src}}" alt="">
+        <ul>
+          <ng-template ngFor let-i='index' let-item [ngForOf]='item.contentList'>
+            <span *ngIf='item.isShow'>
+              <ng-template ngFor let-i='index' let-item [ngForOf]='item.textlist'>
+                <li (click)='tipShow(item,i,false)' [twinkle]="item.twinkle" [ngStyle]='item.style'></li>
+                <div *ngIf='item.isShow' [ngStyle]='item.content.style'>{{item.content.text}}</div>
+              </ng-template>
+            </span>
+          </ng-template>
+        </ul>
+      </div>
+    </ng-template>
+  </div>
+  <div class="childPage" *ngIf='this.appdataService.content[this.current].anatomyIsShow'>
+    <img src="{{typetextlist[0].tiplist.src}}" width="100%" alt="">
+    <ul>
+      <ng-template ngFor let-i='index' let-childitem [ngForOf]='typetextlist[0].tiplist.textlist'>
+        <div class="childtitle" *ngIf='childitem.isShow'>{{childitem.title}}</div>
+        <li class="anatomyDot" [twinkle]="childitem.twinkle" (click)='tipShow(childitem,i,true)' [ngStyle]='childitem.style'>{{childitem.text}}</li>
+        <!-- <li class="anatomyDot" (click)='tipShow(childitem,i,false)' [ngStyle]='childitem.style'></li> -->
+        <div class="contain" *ngIf='childitem.isShow'>
+          <div (click)='childCloseTip(childitem)' class="childClose"></div>
+          <div style="top:110px" class="nav">
+            <ng-template ngFor let-i='index' let-item [ngForOf]='childitem.childPage.navText'>
+              <span (click)='childRotateNav(childitem,i)' [ngStyle]='item.style'>{{item.text}}</span>
+            </ng-template>
+          </div>
+          <ng-template ngFor let-='index' let-item [ngForOf]='childitem.childPage.content'>
+            <div class="text" *ngIf='item.isShow'>
+              <div [ngStyle]='item.style'>
+                <ng-template ngFor let-i='index' let-item [ngForOf]='item.contentTitleList'>
+                  <div [ngStyle]='item.style'>{{item.text}}</div>
+                </ng-template>
+                <div class="stickborder"></div>
+              </div>
+              <ul [ngStyle]='item.style'>
+                <ng-template ngFor let-i='index' let-item [ngForOf]='item.contentTextList'>
+                  <li>
+                    <div [twinkle]="item.twinkle" *ngIf='item.isShow' [ngStyle]='item.oneDivStyle' class="one"></div>
+                    <div class="two" [ngStyle]='item.style'>{{item.text}}</div>
+                  </li>
+                </ng-template>
+              </ul>
+            </div>
+          </ng-template>
+          <ng-template ngFor let-i='index' let-item [ngForOf]='childitem.childPage.btnText'>
+            <div class="childBtn" *ngIf='item.isShow'>
+              <ul>
+                <ng-template ngFor let-i='index' let-item [ngForOf]='item.btnTextList'>
+                  <li (click)='childRotate($event,item,childitem)' [ngStyle]='item.style'>{{item.text}}</li>
+                </ng-template>
+              </ul>
+            </div>
+          </ng-template>
+          <div class="tip">
+            <ng-template ngFor let-i='index' let-item [ngForOf]='childitem.childPage.imglist'>
+              <div *ngIf='item.isShow'>
+                <ng-template ngFor let-i='index' let-item [ngForOf]='item.contentList'>
+                  <img class="changjing" [ngStyle]='item.style' src="{{item.src}}" alt="">
+                </ng-template>
+                <ul>
+                  <ng-template ngFor let-i='index' let-item [ngForOf]='item.contentList'>
+                    <span *ngIf='item.isShow'>
+                      <ng-template ngFor let-i='index' let-item [ngForOf]='item.textlist'>
+                        <li [twinkle]="item.twinkle" (click)='tipShow(item,i,false)' [ngStyle]='item.style'></li>
+                        <div *ngIf='item.isShow' [ngStyle]='item.content.style'>{{item.content.text}}</div>
+                      </ng-template>
+                    </span>
+                  </ng-template>
+                </ul>
+              </div>
+            </ng-template>
+          </div>
+        </div>
+      </ng-template>
+    </ul>
+  </div>
+  <ng-template ngFor let-i='index' let-item [ngForOf]='typetextlist[0].measureList'>
+    <div *ngIf='item.isShow'>
+      <test-questions [chapter]='item.chapter'></test-questions>
+    </div>
+  </ng-template>
+</div>
+<!-- 顺序点击 -->
+
+<div class="type_sequentialClicks" *ngIf='appboolen.type_sequentialClicks'>
+  <div class="nav">
+    <ng-template ngFor let-i='index' let-item [ngForOf]='typetextlist[0].navText'>
+      <span (click)='rotateNav(item,i)' [ngStyle]='item.style'>{{item.text}}</span>
+    </ng-template>
+  </div>
+  <ng-template ngFor let-i='index' let-item [ngForOf]='typetextlist[0].btnText'>
+    <div class="btn" *ngIf='item.isShow'>
+      <img *ngIf='item.scrIsShow' src="{{item.src}}" alt="">
+      <ul>
+        <ng-template ngFor let-i='index' let-btnitem [ngForOf]='item.btnTextList'>
+          <li (click)='sequentialClicks($event,i,btnitem,item,btnindex)' [ngStyle]='btnitem.style'>{{btnitem.text}}</li>
+          <div [ngStyle]='btnitem.contentStyle' class="content" *ngIf='btnitem.contentIsShow'>
+            <ng-template ngFor let-i='index' let-item [ngForOf]='btnitem.content'>
+              <div class="contentIcon">
+                <div *ngIf='item.oneIsShow' class="icon"></div>
+                <div class="text">{{item.text}}</div>
+              </div>
+            </ng-template>
+          </div>
+          <img *ngIf='btnitem.imgShow' [ngStyle]='btnitem.srcStyle' src="{{btnitem.src}}" alt="">
+        </ng-template>
+      </ul>
+    </div>
+  </ng-template>
+</div>
+
+<div class="type-paging" *ngIf='appboolen.type_paging'>
+  <ng-template ngFor let-item let-i='index' [ngForOf]='typetextlist[0].imglist'>
+    <div class="page" *ngIf='item.isShow'>
+      <img *ngIf='i!=0' class="prev" (click)="pageClick('prev',item,i)" src="./assets/images/project/prevPageS.png" alt="">
+      <img *ngIf='i==0' class="prev" (click)="pageClick('prev',item,i)" src="./assets/images/project/prevPageH.png" alt="">
+      <img *ngIf='i>=0&&i!=typetextlist[0].imglist.length-1' class="next" (click)="pageClick('next',item,i)" src="./assets/images/project/nextPageS.png"
+        alt="">
+      <img *ngIf='i==typetextlist[0].imglist.length-1' class="next" (click)="pageClick('next',item,i)" src="./assets/images/project/nextPageH.png"
+        alt="">
+    </div>
+    <img *ngIf='item.isShow' [ngStyle]='item.srcStyle' src="{{item.src}}" alt="">
+  </ng-template>
+</div>
+<div class="title">{{typetitle}}</div>
+
+<!-- 选项卡切换图片更换 -->
+<div class="type_changeImg" *ngIf='appboolen.type_changeImg '>
+  <div class="toptitle">{{this.typetextlist[0].title}}</div>
+  <ul class="text">
+    <ng-template ngFor let-item let-i='index ' [ngForOf]='this.typetextlist[0].navText '>
+      <li (click)='changeImg(item,i) '>
+        <img *ngIf='item.img1IsShow ' [ngStyle]='item.img1Style ' src="{{item.img1}}" alt="">
+        <img *ngIf='item.img2IsShow ' [ngStyle]='item.img2Style ' src="{{item.img2}}" alt="">
+        <img *ngIf='item.img3IsShow ' [ngStyle]='item.img3Style ' src="{{item.img3}}" alt="">
+      </li>
+    </ng-template>
+  </ul>
+  <ul class="content">
+    <ng-template ngFor let-item let-i='index' [ngForOf]='this.typetextlist[0].imglist '>
+      <li>
+        <ul *ngIf='item.isShow' class="videoImg">
+          <ng-template ngFor let-item let-j='index' [ngForOf]='item.imgsrc'>
+            <li (click)="videoMethods(item,i,j)">
+              <img class='poster' *ngIf='item.isShow' src="{{item.src}}" alt="">
+              <span>{{item.text}}</span>
+            </li>
+          </ng-template>
+        </ul>
+        <div class="videoList" *ngIf='item.divShow'>
+          <ng-template ngFor let-item let-j='index' [ngForOf]='item.videolist'>
+            <button *ngIf='item.isShow' id="close" class="videoClose" (click)="closeVideo(item,i,j)"></button>
+            <div class="videoContainer" *ngIf='item.isShow'>
+              <video class="myVideo" id="myVideo" controls autoplay preload="auto" poster="" width="380">
+                <source src="{{item.src}}" type="video/mp4" />
+              </video>
+              <!-- <div class="caption">{{item.text}}</div> -->
+              <div class="control">
+                <div class="btmControl">
+                  <div class="btnPlay btn" title="播放/暂停视频"><span class="icon-play"></span></div>
+                  <div class="timeUpdate">
+                    <span class="current"></span>
+                    <span>/</span>
+                    <span class="duration"></span>
+                  </div>
+                  <div class="progress-bar">
+                    <div class="progress">
+                      <span class="bufferBar"></span>
+                      <span class="timeBar"></span>
+                      <span class="thumb"></span>
+                    </div>
+                  </div>
+                  <!--<div class="volume" title="Set volume">
+                        <span class="volumeBar"></span>
+                        </div>-->
+                  <div class="sound sound2 btn" title="关闭/开启声音"><span class="icon-sound"></span></div>
+                  <div class="btnFS btn" title="切换到全屏"><span class="icon-fullscreen"></span></div>
+                </div>
+              </div>
+            </div>
+            <!-- <video *ngIf='item.isShow' [ngStyle]='item.style' src="{{item.src}}" controls></video> -->
+          </ng-template>
+        </div>
+        <!-- <ul *ngIf='item.isShow' class="videolist">
+          <ng-template ngFor let-item let-i='index' [ngForOf]='item.videolist'>
+            <li (click)="videoMethods(item,i,k)">
+              <img *ngIf='item.isShow' src="{{item.imgsrc}}" alt="">
+            </li>
+            <video [ngStyle]='item.style' src="{{item.src}}" class='video' style='width:100%;height:100%; display:none' controls></video>
+          </ng-template>
+        </ul> -->
+      </li>
+    </ng-template>
+  </ul>
+</div>
+
+<!-- 点击旋转 -->
+<div class="type_rotate" *ngIf='appboolen.type_rotate'>
+  <div class="nav">
+    <ng-template ngFor let-i='index' let-item [ngForOf]='typetextlist[0].navText'>
+      <span (click)='rotateNav(item,i)' [ngStyle]='item.style'>{{item.text}}</span>
+    </ng-template>
+  </div>
+  <ng-template ngFor let-='index' let-item [ngForOf]='typetextlist[0].content'>
+    <div *ngIf='item.isShow'>
+      <ul [ngStyle]='item.style'>
+        <ng-template ngFor let-i='index' let-item [ngForOf]='item.contentTextList'>
+          <li>
+            <div *ngIf='item.isShow' [ngStyle]='item.oneDivStyle' class="one"></div>
+            <div class="two" [ngStyle]='item.style'>{{item.text}}</div>
+          </li>
+        </ng-template>
+      </ul>
+    </div>
+  </ng-template>
+  <ng-template ngFor let-i='index' let-item [ngForOf]='typetextlist[0].btnText'>
+    <div class="btn" *ngIf='item.isShow'>
+      <ul>
+        <ng-template ngFor let-i='index' let-item [ngForOf]='item.btnTextList'>
+          <li (click)='rotate($event,item.direction)' [ngStyle]='item.style'>{{item.text}}</li>
+        </ng-template>
+      </ul>
+    </div>
+  </ng-template>
+  <ng-template ngFor let-i='index' let-item [ngForOf]='typetextlist[0].anatomyText'>
+    <div class="anatomy" *ngIf='item.isShow'>
+      <ul>
+        <ng-template ngFor let-i='index' let-item [ngForOf]='item.anatomyTextList'>
+          <li (click)='anatomyShow(item,i)' [ngStyle]='item.style'>
+            {{item.text}}
+          </li>
+        </ng-template>
+      </ul>
+    </div>
+  </ng-template>
+  <div *ngIf='this.appdataService.content[this.current].rotateImgIsShow' class="tip">
+    <ng-template ngFor let-i='index' let-item [ngForOf]='typetextlist[0].imglist'>
+      <div *ngIf='item.isShow'>
+        <img [ngStyle]='item.style' src="{{item.contentList[0].src}}" alt="">
+        <ul>
+          <ng-template ngFor let-i='index' let-item [ngForOf]='item.contentList'>
+            <span *ngIf='item.isShow'>
+              <ng-template ngFor let-i='index' let-item [ngForOf]='item.textlist'>
+                <li (click)='tipShow(item,i,false)' [twinkle]="item.twinkle" [ngStyle]='item.style'></li>
+                <div *ngIf='item.isShow' [ngStyle]='item.content.style'>{{item.content.text}}</div>
+              </ng-template>
+            </span>
+          </ng-template>
+        </ul>
+      </div>
+    </ng-template>
+  </div>
+  <div class="childPage" *ngIf='this.appdataService.content[this.current].anatomyIsShow'>
+    <img src="{{typetextlist[0].tiplist.src}}" alt="">
+    <ul>
+      <ng-template ngFor let-i='index' let-childitem [ngForOf]='typetextlist[0].tiplist.textlist'>
+        <div class="childtitle" *ngIf='childitem.isShow'>{{childitem.title}}</div>
+        <li class="anatomyDot" (click)='tipShow(childitem,i,false)' [ngStyle]='childitem.style'></li>
+        <div class="contain" *ngIf='childitem.isShow'>
+          <div (click)='childCloseTip(childitem)' class="childClose"></div>
+          <div style="top:110px" class="nav">
+            <ng-template ngFor let-i='index' let-item [ngForOf]='childitem.childPage.navText'>
+              <span (click)='childRotateNav(childitem,i)' [ngStyle]='item.style'>{{item.text}}</span>
+            </ng-template>
+          </div>
+          <ng-template ngFor let-='index' let-item [ngForOf]='childitem.childPage.content'>
+            <div class="text" *ngIf='item.isShow'>
+              <ul [ngStyle]='item.style'>
+                <ng-template ngFor let-i='index' let-item [ngForOf]='item.contentTextList'>
+                  <li>
+                    <div *ngIf='item.isShow' [ngStyle]='item.oneDivStyle'></div>
+                    <div [ngStyle]='item.style'>{{item.text}}</div>
+                  </li>
+                </ng-template>
+              </ul>
+            </div>
+          </ng-template>
+          <ng-template ngFor let-i='index' let-item [ngForOf]='childitem.childPage.btnText'>
+            <div class="childBtn" *ngIf='item.isShow'>
+              <ul>
+                <ng-template ngFor let-i='index' let-item [ngForOf]='item.btnTextList'>
+                  <li (click)='childRotate($event,item,childitem)' [ngStyle]='item.style'>{{item.text}}</li>
+                </ng-template>
+              </ul>
+            </div>
+          </ng-template>
+          <div class="tip">
+            <ng-template ngFor let-i='index' let-item [ngForOf]='childitem.childPage.imglist'>
+              <div *ngIf='item.isShow'>
+                <img src="{{item.contentList[0].src}}" alt=""> {{item.contentList.textlist}}
+                <ul>
+                  <ng-template ngFor let-i='index' let-item [ngForOf]='item.contentList'>
+                    <span *ngIf='item.isShow'>
+                      <ng-template ngFor let-i='index' let-item [ngForOf]='item.textlist'>
+                        <li [twinkle]="item.twinkle" (click)='tipShow(item,i,false)' [ngStyle]='item.style'></li>
+                        <div *ngIf='item.isShow' [ngStyle]='item.content.style'>{{item.content.text}}</div>
+                      </ng-template>
+                    </span>
+                  </ng-template>
+                </ul>
+              </div>
+            </ng-template>
+          </div>
+        </div>
+      </ng-template>
+    </ul>
+  </div>
+  <ng-template ngFor let-i='index' let-item [ngForOf]='typetextlist[0].measureList'>
+    <div *ngIf='item.isShow'>
+      <test-questions [chapter]='item.chapter'></test-questions>
+    </div>
+  </ng-template>
+</div>

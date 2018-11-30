@@ -1,0 +1,10 @@
+<!-- 关闭按钮的弹窗 -->
+<div class="modal" *ngIf="modal">
+    <div class="modal-dialog">
+        <img src="./assets/images/project/closeIcon.png" alt="">
+        <p>您是否要退出课程学习？</p>
+
+        <button class="no" (click)="reStudy()">否</button>
+        <button class="yes" (click)="closeWindow()">是</button>
+    </div>
+</div>

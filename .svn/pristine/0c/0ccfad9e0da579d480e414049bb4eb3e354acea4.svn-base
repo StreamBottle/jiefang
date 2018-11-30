@@ -1,0 +1,413 @@
+<div class="change-direction">
+  <!-- 目录 -->
+  <div *ngIf="indexChangeState.bodyFlag" class="body">
+    <p class="q-title">课程预览</p>
+    <div class="q-body">
+      <div class="q-body-left">
+        <div (click)="changeBtn(1)">
+          <div class="text">
+            <span>传感器与执行器</span>
+          </div>
+          <div class="task" *ngIf='indexChangeState.oneMouse'>
+            <span (click)="sensorChapter(1)">启动停止系统按键E693</span>
+            <span (click)="sensorChapter(2)">蓄电池监控单元J367BDM</span>  
+            <span (click)="sensorChapter(3)">变速箱空挡位置传感器G701</span>
+          </div>
+        </div>
+        <div (click)="changeBtn(2)">
+          <div class="text">
+            <span [ngClass]="{'full':indexChangeState.powerFullFlag}">电源与稳压器</span>
+          </div>
+          <div class="task" *ngIf='indexChangeState.twoMouse'>
+            <span (click)="powerChapter(1)">EFB蓄电池</span>
+            <span (click)="powerChapter(2)">稳压器A19</span>
+          </div>
+        </div>
+        <div (click)="changeBtn(3)">
+          <div class="text">
+            <span [ngClass]="{'full':indexChangeState.caseFullFlag}">案例分享</span>
+          </div>
+          <div class="task" *ngIf='indexChangeState.threeMouse'>
+            <span (click)="caseChapter(1)">案例分享</span>
+          </div>
+        </div>
+      </div>
+
+
+
+      <div class="q-body-right">
+        <img src="./assets/images/replace/index.png" alt="">
+      </div>
+    </div>
+    <div class="redCircle">
+      <img src="./assets/images/replace/redCircle.png" alt="">
+      <div class="text">
+        启动停止系统是第二代蓝驱技术体系中的一部分。该系统在停车阶段可以自动关闭发动机，而在驾驶员想要启步时又会自动启动发动机，从而达到节油的目的。由于系统所需的控制逻辑，参与该功能的电气原件与普通车辆不同。
+        <span>请点击目录中的三个内容学习各原件的检修方法。</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- 目录下章节展示部分 -->
+  <div *ngIf="indexChangeState.backFlag">
+
+    <!-- 传感器和执行器-->
+    <div *ngIf='indexChangeState.sensorFlag' class="sensor">
+
+      <!-- 左侧文字 -->
+      <div id='boxSensorScroll' class="sensorLeft">
+        <!-- 第一个子章节 -->
+        <div *ngIf="indexChangeState.oneFlag" class="one">
+          <h5>传感器与执行器（启动停止系统按键E693)</h5>
+          <div class="startStop">
+            <div class="up">
+              <div (click)='oneUp()'>
+                <span [ngClass]="{'full':oneState.oneFullClass}" [halo]="oneState.oneHaloUpFlag"></span> 作用:
+              </div>
+              <p [@flyIn]="'fadein'" *ngIf='oneState.oneUpFlag'>
+                在行车过程中，驾驶员可以用该按键开启或关闭启动停止系统。 
+              </p>
+              <p [@flyIn]="'fadein'" *ngIf='oneState.oneUpFlag'>
+                  只要是手动“打开点火开关”，那么停车启步系统就会自动开启。一旦满足前面提到的工作条件，该系统就会自动工作。
+              </p>
+             
+            </div>
+            <div class="down">
+              <div *ngIf='oneState.oneEmptyClass' (click)="oneDown()">
+                <span  [halo]="oneState.oneHaloDownFlag" [ngClass]="{ 'empty':oneState.oneEmptyClass,'full':oneState.oneDownFullClass}"></span>                影响:
+              </div>
+              <p [@flyIn]="'fadein'" *ngIf='oneState.oneDownFlag'>
+                如果F416出现故障，那么发动机控制单元就会关闭启动停止系统。 
+              </p>
+              <p [@flyIn]="'fadein'" *ngIf='oneState.oneDownFlag'>
+                发动机控制单元故障存储器内会记录一条故障信息。
+              </p>
+            </div>
+          </div>
+          <div (click)="oneNext()" *ngIf='oneState.oneNextTitleFlag' class="next">
+            <span>
+                 蓄电池监控单元J367BDM
+              </span>
+            <span class="task">您可以选择继续学习当前内容或单击该内容学习下一章节</span>
+
+          </div>
+        </div>
+
+        <!-- 第二个子章节 -->
+        <div *ngIf="indexChangeState.twoFlag" class="two">
+          <h5>传感器与执行器（蓄电池监控单元J367BDM）</h5>
+          <div id="boxTwoScroll" class="startStop">
+              <div class="up">
+                <div  (click)='twoUp()'>
+                  <span [ngClass]="{'full':twoState.twoFullClass}" [halo]="twoState.twoHaloUpFlag"></span> 作用:
+                </div>
+                <p [@flyIn]="'fadein'" *ngIf='twoState.twoUpFlag'>
+                  蓝驱车型上采用新的线束来连接蓄电池负极，线束中有一个集成在蓄电池监控控制单元内的新型蓄电池传感器，它通过LIN总线与数据总线诊断接口相连。其作用是用来检测蓄电池温度、电压、电流信息，借助于这些数据，就可以将充电调节情况和充电电压与蓄电池的充电和工作状态进行匹配。通过对蓄电池的详细数据分析，来提升启动停止系统的有效性。
+                </p>
+              </div>
+              <div class="down">
+                <div *ngIf='twoState.twoEmptyClass' (click)="twoDown()">
+                  <span [halo]="twoState.twoHaloDownFlag" [ngClass]="{ 'empty':twoState.twoEmptyClass,'full':twoState.twoDownFullClass}"></span>                  影响:
+                </div>
+                <p [@flyIn]="'fadein'" *ngIf='twoState.twoDownFlag'>
+                  如果蓄电池传感器损坏，则无法获知蓄电池状态的正确信息。于是数据总线诊断接口的故障存储器内会记录一条故障信息。启动停止系统被关闭。
+                </p>
+              </div>
+          </div>
+          <div (click)="twoNext()" *ngIf='twoState.twoNextTitleFlag' class="next">
+            <span> 变速箱空挡位置传感器G701</span>
+            <span class="task">您可以选择继续学习当前内容或单击该内容学习下一章节</span>
+          </div>
+        </div>
+
+        <!-- 第三个子章节 -->
+        <div *ngIf="indexChangeState.threeFlag" class="three">
+          <h5>传感器与执行器（变速箱空挡位置传感器G701）</h5>
+          <div class="startStop">
+            <div class="up">
+              <div (click)='threeUp()'>
+                <span [ngClass]="{'full':threeState.threeFullClass}" [halo]="threeState.threeHaloUpFlag"></span> 定义:
+              </div>
+              <p [@flyIn]="'fadein'" *ngIf='threeState.threeUpFlag'>
+                要想在配备手动变速箱的蓝驱车型上实现启动停止系统功能，就必须增加一个传感器，系统需要利用这个传感器来识别换挡杆的空挡位置。这就是变速箱空挡位置传感器G701。该传感器是从变速箱上方拧入到变速箱壳体中的，它以非接触方式识别选挡轴的位置。
+              </p>
+            </div>
+          </div>
+          <div (click)="threeNext()" *ngIf='threeState.threeNextTitleFlag' class="next">
+            <span>电源与稳压器（EFB蓄电池）</span>
+            <span class="task">您可以选择继续学习当前内容或单击该内容学习下一章节</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- 右侧图片 -->
+      <div class="sensorRight ">
+        <!-- 第一个子章节图片 -->
+        <div class="one" *ngIf="indexChangeState.oneFlag">
+          <div class="upImg" *ngIf='oneState.oneUpImg'>
+            <img src="./assets/images/replace/1.jpg " alt=" ">
+          </div>
+          <div class="down1Img" *ngIf='oneState.oneDown1Img'>
+            <img src="./assets/images/replace/1.jpg" alt=" ">
+            <img (click)="oneDownImages()" *ngIf="oneState.oneDown2Img" class="upImg" [halo]="'halo'" src="./assets/images/replace/3.png"
+              alt="">
+          </div>
+          <div *ngIf="oneState.oneNextFlag" class="circuit">
+            <img src="./assets/images/replace/2.jpg" alt="">
+            <div>
+              <span>开关信号线-T6e/5</span>
+            </div>
+            <div>
+              <span>开关功能提示灯-T6e/1</span>
+            </div>
+            <div>
+              <span>按钮照明灯电源线-T6e/3</span>
+            </div>
+            <div>
+              <span>启停模式按钮-E693</span>
+            </div>
+            <div>
+              <span>按钮照明灯接地线-T6e/6</span>
+            </div>
+            <div>
+              <span>开关15供电-T6e/4</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- 第二个子章节图片 -->
+        <div class="two" *ngIf="indexChangeState.twoFlag">
+          <div class="upImg" *ngIf='twoState.twoUpImg'>
+            <img src="./assets/images/replace/13.png " alt=" ">
+          </div>
+          <div class="down1Img" *ngIf='twoState.twoDown1Img'>
+            <img src="./assets/images/replace/13.png" alt=" ">
+            <div>
+              <img (click)="twoDownImages()" *ngIf="twoState.twoDown2Img" class="upImg" [halo]="'halo'" src="./assets/images/replace/10.png"
+                alt="">
+              <span>
+                  蓄电池监控控制单元内的蓄电池传感器，连接在接地线的负极接线柱上
+              </span>
+            </div>
+          </div>
+          <div *ngIf="twoState.twoNextFlag" class="circuit">
+            <img src="./assets/images/replace/5.jpg" alt="">
+            <div>
+              <span>蓄电池</span>
+            </div>
+            <div>
+              <span>供电线30-T2h/2</span>
+            </div>
+            <div>
+              <span>蓄电池监测控制单元 J367</span>
+            </div>
+            <div>
+              <span>LIN数据通讯线30-T2h/1</span>
+            </div>
+            <div>
+              <span>接地端31</span>
+            </div>
+            <div>
+              <span>连接蓄电池负极</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- 第三个子章节图片 -->
+        <div class="three" *ngIf="indexChangeState.threeFlag">
+          <div class="down1Img" *ngIf='threeState.threeDown1Img'>
+            <img src="./assets/images/replace/14.png" alt=" ">
+            <div>
+              <img (click)="threeDownImages()" *ngIf="threeState.threeDown2Img" class="upImg" [halo]="'halo'" src="./assets/images/replace/12.png"
+                alt="">
+              <span>
+                变速箱空挡位置传感器G701
+                </span>
+            </div>
+          </div>
+          <div *ngIf="threeState.threeNextFlag" class="circuit">
+            <img src="./assets/images/replace/6.jpg" alt="">
+            <div>
+              <span>空挡信号-T3n/2</span>
+            </div>
+            <div>
+              <span>供电线-T3n/1</span>
+            </div>
+            <div>
+              <span>接地线31-T3n/3</span>
+            </div>
+            <div>
+              <span>变速箱空挡位置传感器G701</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+
+
+    <!-- 电源和稳压器 -->
+    <div *ngIf='indexChangeState.powerFlag' class="power ">
+
+      <!-- 左侧文字 -->
+      <div id="boxPowerScroll" class="powerLeft">
+
+        <!-- 第一个子章节 -->
+        <div *ngIf="indexChangeState.fourFlag" class="one">
+          <h5>电源与稳压器（EFB蓄电池）</h5>
+          <div class="startStop">
+            <div class="up">
+              <div (click)='fourUp()'>
+                <span [ngClass]="{'full':fourState.fourFullClass}" [halo]="fourState.fourHaloUpFlag"></span> 注意事项:
+              </div>
+              <p [@flyIn]="'fadein'" *ngIf='fourState.fourUpFlag'>
+                启停系统中，外接充电器充电时，充电器的负极不能接在蓄电池的负极上，必须连接到发动机(车身)的接地。这是因为蓄电池负极连接了BDM，如果接蓄电池的负极，电流没有经过BDM，BDM不能检测到电流，需要时间重新计算蓄电池充电状态。
+              </p>
+            </div>
+          </div>
+          <div (click)="fourNext()" *ngIf='fourState.fourNextTitleFlag' class="next">
+            <span>稳压器A19</span>
+            <span class="task">您可以选择继续学习当前内容或单击该内容学习下一章节</span>
+          </div>
+        </div>
+
+        <!-- 第二个子章节 -->
+        <div *ngIf="indexChangeState.fiveFlag" class="two">
+          <h5>电源与稳压器（稳压器A19）</h5>
+          <div class="startStop" id="boxscroll">
+            <div class="up">
+              <div (click)='fiveUp()'>
+                <span [ngClass]="{'full':fiveState.fiveFullClass}" [halo]="fiveState.fiveHaloUpFlag"></span> 作用:  
+              </div>
+              <p [@flyIn]="'fadein'" *ngIf='fiveState.fiveUpFlag'>
+                其作用就是在特定情况下（比如启动停止系统工作时），将车载网络（接线端30）的电压稳定在约12V。由于启动停止系统在工作时需要很大的启动电流，这将导致车上其它用电器的电压波动很大，因此就需要有这样一个稳压器来稳定电压。
+              </p>
+              <p [@flyIn]="'fadein'" *ngIf='fiveState.fiveUpFlag'>
+                如果没有这个稳压器，那么受影响的控制单元就会重置设备并会记录下例如“车载电压，信号太小”这样的故障。而使用了稳压器就可避免出现这种情况。
+              </p>
+            </div>
+            <div class="down">
+              <div *ngIf='fiveState.fiveEmptyClass' (click)="fiveDown()">
+                <span [halo]="fiveState.fiveHaloDownFlag" [ngClass]="{ 'empty':fiveState.fiveEmptyClass,'full':fiveState.fiveDownFullClass}"></span>                影响:
+              </div>
+              <p [@flyIn]="'fadein'" *ngIf='fiveState.fiveDownFlag'>
+                如果稳压器损坏，在启动机工作时就会导致收音机、导航、组合仪表以及电话的工作电压不足，那么这些设备就会被重置。当启动停止系统处于工作状态时，每次启动发动机，上述设备就出现重置，这就说明稳压器出现损坏。但目前不会在如诊断接口或者车载电网控制单元的故障存储器内出现直接的故障记录。
+              </p>
+            </div>
+          </div>
+          <div (click)="fiveNext()" *ngIf='fiveState.fiveNextTitleFlag' class="next">
+            <span>案例分享</span>
+            <span class="task">您可以选择继续学习当前内容或单击该内容学习下一章节</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- 右侧图片 -->
+      <div class="powerRight ">
+        <!-- 第一个子章节图片 -->
+        <div class="one" *ngIf="indexChangeState.fourFlag">
+          <div class="down1Img" *ngIf='fourState.fourDown1Img'>
+            <img src="./assets/images/replace/9.png" alt=" ">
+            <div>
+              <img (click)="fourDownImages()" *ngIf="fourState.fourDown2Img" class="upImg" [halo]="'halo'" src="./assets/images/replace/11.png"
+                alt="">
+              <span>车身接线柱子，链接充电器及启动跨接线都需要接在此接线柱上</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- 第二个子章节图片 -->
+        <div class="two" *ngIf="indexChangeState.fiveFlag">
+          <div class="upImg" *ngIf='fiveState.fiveUpImg'>
+            <img src="./assets/images/replace/7.png " alt=" ">
+          </div>
+          <div class="down1Img" *ngIf='fiveState.fiveDown1Img'>
+            <img src="./assets/images/replace/7.png" alt=" ">
+            <div>
+              <img (click)="fiveDownImages()" *ngIf="fiveState.fiveDown2Img" class="upImg" [halo]="'halo'" src="./assets/images/replace/button05-four-01-3.png"
+                alt="">
+              <span>200W稳压器A19，安装在手套箱后面</span>
+            </div>
+
+          </div>
+          <div *ngIf="fiveState.fiveNextFlag" class="circuit">
+            <img src="./assets/images/replace/8.jpg" alt="">
+            <div>
+              <span>输出30(稳定电压供仪表.收音机等)-T12d/7</span>
+            </div>
+            <div>
+              <span>稳压器-A19</span>
+            </div>
+            <div>
+              <span>50R(启动时:12V电压信号)-T12d/4</span>
+            </div>
+            <div>
+              <span>接地线-T12d/2</span>
+            </div>
+            <div>
+              <span>供电(15)-T12d/3</span>
+            </div>
+            <div>
+              <span>输入30供电-T12d/1</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+
+
+    <!-- 案例分享 -->
+    <div *ngIf='indexChangeState.caseFlag' class="case">
+      <div class="caseTitle">案例分享</div>
+      <div class="caseContent">
+        <div class="boxScorll" id="boxScroll">
+          <div [@flyIn]="'fadein'" class="content">
+            <p>在发动机数据流中，和启动功能相关的有以下五组数据：</p>
+            <ul>
+              <li><span>1</span>用于发动机的停止障碍因素Binary 8 Bit</li>
+              <li><span>2</span>至发动机的启动请求Binary 8 Bit</li>
+              <li><span>3</span>激活的用户的启动要求Binary 16 Bit</li>
+              <li><span>4</span>激活的用户的停止阻碍因素Binary 16 Bit</li>
+              <li><span>5</span>启动设备启动/停止系统故障Binary 16 Bit</li>
+            </ul>
+            <h4>下面我们来看一个具体故障案例：</h4>
+            <div>
+              途安L1.4T启停功能无法使用<br> 故障现象：经试车在启停功能开启条件、蓄电池电压、车门关闭、空调关闭、发动机水温正常都满足
+              <br> 的情况下，启停功能仍无法开启，诊断仪检测无故障码。
+              <br> 年款：2016
+              <br> 发动机：CSSA
+              <br> 变速箱：QTB
+              <br> 交货时间：2016-10-09
+              <br> 底盘号：LSVRB60R9GN011463
+              <br> 行驶里程：10817km
+            </div>
+            <div>
+              诊断分析<br> 通过读取和启停相关的数据流，可通过当前启停功能信息判断客户抱怨原因。发动机数据流中关于启<br>停功能相关数据流：
+              <br>
+              <img class="img1" src="./assets/images/replace/case-1.png" alt="">
+              <br>我们发现在和启停系统相关的五组数据流中，“激活的用户的停止阻碍因素”这一组里，Bit3显示<br>为1，即表明此项系统存在故障。
+              <br>
+              <img class="img2" src="./assets/images/replace/case-2.png" alt="">
+              <br> 通过对比每个数据具体对应的系统，我们发现Bit3所对应系统为能量管理系统，因此判断该车蓄电
+              <br>池应存在故障，后更换蓄电池，故障排除。 <br> 我们在判断故障原因时，除结合故障现象以外，还应该更多利用诊断数据，以便更准确更快速地找<br>到故障原因。
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <!-- 返回按钮 -->
+    <div class="back" (click)="back()">
+      <div class="tip" style='line-height:50px;'>
+        【重新选择】按钮，点击将返回本节内容首页
+      </div>
+    </div>
+
+  </div>
+
+</div>

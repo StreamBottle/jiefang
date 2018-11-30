@@ -1,0 +1,12 @@
+<div class="com-img" [ngStyle]="setStyle()" *ngIf="!(data.currentStyle?.display==='none')" halo [@halo]="data?.currentState?.animation?.animationOnID"
+  [@flyIn]="data?.currentState?.animation?.animationInID" [ficker1]="data?.currentState?.animation?.animationOnID">
+</div>
+
+<ng-template ngFor let-item [ngForOf]="data?.currentState?.mouseEnterElementArray">
+  <div class='target-element' (mouseenter)="targetElementMouseEnter(item)" (mouseout)="targetElementMouseout(item)" [ngStyle]='targetElementStyle(item)'
+    *ngIf='item?.mouseEnterimg||item?.mouseEnterText'>
+    <img *ngIf='item?.mouseEnterimg' class='mouseenter-img' src="{{item?.mouseEnterimg}}" [ngStyle]='setMouseEnterImgStyle(item)'
+      alt=" ">
+    <span *ngIf='item?.mouseEnterText' class='mouseenter-text' [ngStyle]='setMouseEnterTextStyle(item)'>{{item.mouseEnterText}}</span>
+  </div>
+</ng-template>

@@ -1,0 +1,25 @@
+<div class="testQuestion">
+    <div class="titleName">
+        <img src="./assets/images/project/testIcon.png" alt="">
+        <h2>测试题</h2>
+    </div>
+    <ng-template ngFor let-i='index' let-item [ngForOf]='currentTestQuestion'>
+        <div class="content" *ngIf='item.isShow'>
+            <div class="questionTitle">{{item.text}}</div>
+            <img src="{{item.src}}" alt="">
+            <form>
+                <ng-template ngFor let-i='index' let-opationItem [ngForOf]='item.option'>
+                    <label (click)='slected(item,i,opationItem)' for="{{opationItem.id}}-{{i}}">
+                            <input checked [input]="opationItem.checked"  id="{{opationItem.id}}-{{i}}" name='{{opationItem.id}}' type="radio">
+                            <span [ngStyle]='opationItem.textStyle'>{{opationItem.text}}</span>
+                        </label>
+                </ng-template>
+            </form>
+            <div class="task" *ngIf='item.taskIsShow'>
+                {{item.taskInfo}}
+            </div>
+            <div class="prev" *ngIf='currentTestQuestion.length>1' (click)='prevQustion(i)'>上一题</div>
+            <div class="next" *ngIf='currentTestQuestion.length>1' (click)='nextQustion(i)'>下一题</div>
+        </div>
+    </ng-template>
+</div>

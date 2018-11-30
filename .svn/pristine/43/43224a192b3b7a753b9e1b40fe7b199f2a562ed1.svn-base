@@ -1,0 +1,62 @@
+<div class="multimeter-contain">
+    <div id="mask-multimeter">
+        <div class="multimeter" id="hehhe">
+            <div id="multimeter-bottom" class="multimeter-bottom"></div>
+            <div class="multimeter-off cursor-pointer" (click)="this.Mdata.multimeteroff();"></div>
+            <div class="multimeter-v cursor-pointer" (click)="multimeterv()"></div>
+            <div class="multimeter-Red"></div>
+            <div class="multimeter-black"></div>
+            <div class="multimeter-coe close cursor-pointer" style='cursor:pointer;' (click)="closemultimeter();">X</div>
+        </div>
+    </div>
+    <div id="hhjmultimeterRed-hotspot" class="hhjmultimeterRed-hotspot ui-draggable"></div>
+    <div id="hhjmultimeterRed" class="multimeterRed"></div>
+    <div id="hhjmultimeterBlack-hotspot" class="hhjmultimeterBlack-hotspot ui-draggable"></div>
+    <div id="hhjmultimeterBlack" class="multimeterBlack"></div>
+    <span class="value"></span>
+    <span class="company"></span>
+</div>
+<div id="mask-svg" style="overflow:hidden">
+    <svg width='1024px' height='460px' version='1.1' xmlns='http://www.w3.org/2000/svg' id='svg'>
+              <path d='M950 120 C950 120 720 50 900 400' style='fill:none;stroke:#d83747;stroke-width:5' id='path_Red' 
+              />
+              <path d='M790 120 C790 120 820 50 900 400' style='fill:none;stroke:#656261;stroke-width:5' id='path_black' 
+              />
+   </svg>
+</div>
+<div class="chapter-08-2-01" *ngIf="this.currentShowHotArea=='chapter-08-2-01'">
+    <a class="N1 hot" title="N90" id='3' wybredPosition="N1" wybblackPosition="N1" rqPosition="2013" h-left="509" h-top="187"></a>
+    <a class="N2 hot" title="N95" id="4" wybredPosition="N2" wybblackPosition="N2" rqPosition="2013" h-left="677" h-top="173"></a>
+</div>
+<div class="chapter-08-2-02" *ngIf="this.currentShowHotArea=='chapter-08-2-02'">
+    <a class="N3 hot" title="N90" id='3' wybredPosition="N3" wybblackPosition="N3" rqPosition="2013" h-left="572" h-top="187"></a>
+    <a class="N4 hot" title="N95" id="4" wybredPosition="N4" wybblackPosition="N4" rqPosition="2013" h-left="677" h-top="173"></a>
+</div>
+<div class="chapter-08-2-03" *ngIf="this.currentShowHotArea=='chapter-08-2-03'">
+    <a class="N5 hot" title="N90" id='3' wybredPosition="N5" wybblackPosition="N5" rqPosition="2013" h-left="509" h-top="187"></a>
+    <a class="N6 hot" title="N95" id="4" wybredPosition="N6" wybblackPosition="N6" rqPosition="2013" h-left="677" h-top="173"></a>
+</div>
+<div class="chapter-08-2-04" *ngIf="this.currentShowHotArea=='chapter-08-2-04'">
+    <a class="N7 hot" title="N90" id='3' wybredPosition="N7" wybblackPosition="N7" rqPosition="2013" h-left="572" h-top="187"></a>
+    <a class="N8 hot" title="N95" id="4" wybredPosition="N8" wybblackPosition="N8" rqPosition="2013" h-left="677" h-top="173"></a>
+</div>
+<div class="chapter-12-1-01" *ngIf="this.currentShowHotArea=='chapter-12-1-01'">
+    <a class="N9 hot" title="N90" id='3' wybredPosition="N9" wybblackPosition="N9" rqPosition="2013" h-left="486" h-top="187"></a>
+    <a class="N10 hot" title="N95" id="4" wybredPosition="N10" wybblackPosition="N10" rqPosition="2013" h-left="522" h-top="186"></a>
+</div>
+<div class="chapter-13-1-01" *ngIf="this.currentShowHotArea=='chapter-13-1-01'">
+    <a class="N11 hot" title="N90" id='3' wybredPosition="N11" wybblackPosition="N11" rqPosition="2013" h-left="559" h-top="187"></a>
+    <a class="N12 hot" title="N95" id="4" wybredPosition="N12" wybblackPosition="N12" rqPosition="2013" h-left="595" h-top="186"></a>
+</div>
+<div class="chapter-15-5-01" *ngIf="this.currentShowHotArea=='chapter-15-5-01'">
+    <a class="N13 hot" title="N90" id='3' wybredPosition="N13" wybblackPosition="N13" rqPosition="2013" h-left="474" h-top="187"></a>
+    <a class="N14 hot" title="N95" id="4" wybredPosition="N14" wybblackPosition="N14" rqPosition="2013" h-left="508" h-top="186"></a>
+</div>
+<div class="chapter-16-4-01" *ngIf="this.currentShowHotArea=='chapter-16-4-01'">
+    <a class="N15 hot" title="N90" id='3' wybredPosition="N15" wybblackPosition="N15" rqPosition="2013" h-left="507" h-top="187"></a>
+    <a class="N16 hot" title="N95" id="4" wybredPosition="N16" wybblackPosition="N16" rqPosition="2013" h-left="572" h-top="186"></a>
+</div>
+<div class="chapter-16-4-02" *ngIf="this.currentShowHotArea=='chapter-16-4-02'">
+    <a class="N17 hot" title="N90" id='3' wybredPosition="N17" wybblackPosition="N17" rqPosition="2013" h-left="507" h-top="187"></a>
+    <a class="N18 hot" title="N95" id="4" wybredPosition="N18" wybblackPosition="N18" rqPosition="2013" h-left="572" h-top="186"></a>
+</div>

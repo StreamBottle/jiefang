@@ -1,0 +1,422 @@
+@charset "utf-8";
+@font-face {
+    font-family: "UnidreamLED";
+    src: local("UnidreamLED"), local("UnidreamLED"), url("font/UnidreamLED.ttf") format("truetype"), url("font/UnidreamLED.svg#UnidreamLED") format("svg"), url("font/UnidreamLED.ttf") format("truetype"), url("font/UnidreamLED.woff") format("woff");
+}
+
+.multimeter-contain {
+    position: absolute;
+    width: 1024px;
+    height: 470px;
+    top: 0;
+    left: 0;
+    overflow: hidden;
+}
+
+#mask-multimeter {
+    position: absolute;
+    width: 144px;
+    height: 300px;
+    top: 100px;
+    left: 800px;
+    z-index: 12;
+    overflow: hidden;
+}
+
+.multimeter {
+    position: absolute;
+    left: 0px;
+    width: 143px;
+    height: 320px;
+    float: left;
+    overflow: hidden;
+    background: url(./images/multimeter.png) no-repeat 0 0;
+}
+
+.multimeter-top {
+    position: absolute;
+    width: 97px;
+    height: 74px;
+    top: 21px;
+    font-size: 40px;
+    left: 18px;
+    line-height: 90px;
+    overflow: hidden;
+    text-align: left;
+    color: #454545;
+    font-family: "UnidreamLED";
+    text-align: center;
+}
+
+.showDateUnit {
+    position: absolute;
+    width: 44px;
+    height: 44px;
+    top: 38px;
+    left: 84px;
+    line-height: 44px;
+    overflow: hidden;
+    text-align: center;
+    color: #454545;
+    font-size: 13px;
+    font-weight: bold;
+    font-family: "Microsoft YaHei";
+}
+
+.circleinfobox {
+    width: 41px;
+    height: 16px;
+    border-radius: 16px;
+    position: absolute;
+    left: 51px;
+    top: 120px;
+    background: #f00;
+    display: none;
+    opacity: 0.3;
+}
+
+.multimeter-hotarea {
+    width: 41px;
+    height: 16px;
+    border-radius: 16px;
+    position: absolute;
+    left: 51px;
+    top: 120px;
+    z-index: 6;
+}
+
+.multimeter-topUnit {
+    position: absolute;
+    width: 40px;
+    height: 20px;
+    top: 80px;
+    right: 23px;
+    line-height: 20px;
+    overflow: hidden;
+    text-align: right;
+    color: #454545;
+    font-size: 18px;
+    font-weight: bold;
+    font-family: "Microsoft YaHei";
+}
+
+.multimeter-rightUnit {
+    position: absolute;
+    width: 40px;
+    height: 20px;
+    top: 73px;
+    right: 75px;
+    line-height: 20px;
+    overflow: hidden;
+    text-align: right;
+    color: #454545;
+    font-size: 12px;
+    font-weight: bold;
+    font-family: "Microsoft YaHei";
+}
+
+.multimeter-off {
+    position: absolute;
+    width: 15px;
+    height: 15px;
+    top: 189px;
+    right: 106px;
+    background: #000;
+    opacity: 0;
+}
+
+.multimeter-vv {
+    position: absolute;
+    width: 15px;
+    height: 15px;
+    top: 161px;
+    right: 99px;
+    background: #000;
+    opacity: 0;
+}
+
+.multimeter-mv {
+    position: absolute;
+    width: 15px;
+    height: 15px;
+    top: 134px;
+    right: 73px;
+    background: #000;
+    opacity: 0;
+}
+
+.multimeter-v {
+    position: absolute;
+    width: 15px;
+    height: 15px;
+    top: 158px;
+    right: 96px;
+    background: #000;
+    opacity: 0;
+}
+
+.multimeter-nofine {
+    position: absolute;
+    width: 15px;
+    height: 15px;
+    top: 145px;
+    right: 37px;
+    background: #000;
+    opacity: 0;
+}
+
+.multimeter-mA {
+    position: absolute;
+    width: 15px;
+    height: 15px;
+    top: 160px;
+    right: 28px;
+    background: #000;
+    opacity: 0;
+}
+
+.multimeter-res {
+    position: absolute;
+    width: 15px;
+    height: 15px;
+    top: 174px;
+    right: 27px;
+    background: #000;
+    opacity: 0;
+}
+
+.multimeter-bottom {
+    position: absolute;
+    width: 80px;
+    height: 80px;
+    top: 158px;
+    left: 34px;
+    overflow: hidden;
+    background: url(./images/multimeter_zz.png) no-repeat 0 0;
+    transform-origin: center;
+    transform: rotate(16deg);
+}
+
+.multimeter-Red {
+    position: absolute;
+    width: 30px;
+    height: 70px;
+    bottom: 15px;
+    right: 6px;
+    opacity: 0.8;
+    filter: alpha(opacity=80);
+    background: url(./images/multimeter_r.png) no-repeat 0 0;
+    transform-origin: center;
+}
+
+.multimeter-black {
+    position: absolute;
+    width: 30px;
+    height: 50px;
+    bottom: 19px;
+    right: 35px;
+    opacity: 0.8;
+    filter: alpha(opacity=80);
+    background: url(./images/multimeter_b.png) no-repeat 0 0;
+    transform-origin: center;
+}
+
+.multimeter-coe {
+    width: 25px;
+    height: 25px;
+    text-align: center;
+    position: absolute;
+    top: -5px;
+    right: -5px;
+    color: orange;
+    font-weight: bold;
+    font-size: 20px;
+    background: url(./images/close.png) no-repeat center center;
+}
+
+.multimeterRed {
+    position: absolute;
+    width: 27px;
+    height: 244px;
+    top: 117px;
+    left: 940px;
+    z-index: 11;
+    background: url(./images/3670412.png) no-repeat 0 0;
+}
+
+.multimeterBlack {
+    position: absolute;
+    width: 27px;
+    height: 244px;
+    top: 117px;
+    left: 780px;
+    z-index: 11;
+    background: url(./images/36704121.png) no-repeat 0 0;
+    overflow: hidden;
+}
+
+.hhjmultimeterBlack-hotspot {
+    position: absolute;
+    top: 320px;
+    left: 781px;
+    width: 20px;
+    height: 40px;
+    background: #000;
+    opacity: 0;
+    z-index: 20;
+    background: #f00;
+    filter: alpha(opacity=0);
+    cursor: pointer;
+}
+
+.hhjmultimeterRed-hotspot {
+    position: absolute;
+    top: 320px;
+    left: 942px;
+    width: 20px;
+    height: 40px;
+    background: #000;
+    opacity: 0;
+    filter: alpha(opacity=0);
+    z-index: 20;
+    cursor: pointer;
+}
+
+.value {
+    width: 80px;
+    height: 70px;
+    position: absolute;
+    top: 145px;
+    left: 830px;
+    z-index: 100;
+    font-size: 30px;
+    font-family: "UnidreamLED";
+}
+
+.company {
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    top: 170px;
+    z-index: 100;
+    left: 900px;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+#mask-svg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 1024px;
+    height: 460px;
+    z-index: 2;
+}
+
+a {
+    width: 23px;
+    height: 23px;
+    position: absolute;
+    z-index: 6;
+    border-radius: 50%;
+    background: red;
+}
+
+.chapter-08-2-01 {
+    .N1 {
+        left: 507px;
+        top: 223px;
+    }
+    .N2 {
+        left: 675px;
+        top: 210px;
+    }
+}
+
+.chapter-08-2-02 {
+    .N3 {
+        left: 570px;
+        top: 223px;
+    }
+    .N4 {
+        left: 675px;
+        top: 210px;
+    }
+}
+
+.chapter-08-2-03 {
+    .N5 {
+        left: 507px;
+        top: 223px;
+    }
+    .N6 {
+        left: 675px;
+        top: 210px;
+    }
+}
+
+.chapter-08-2-04 {
+    .N7 {
+        left: 570px;
+        top: 223px;
+    }
+    .N8 {
+        left: 675px;
+        top: 210px;
+    }
+}
+
+.chapter-12-1-01 {
+    .N9 {
+        left: 484px;
+        top: 223px;
+    }
+    .N10 {
+        left: 520px;
+        top: 223px;
+    }
+}
+
+.chapter-13-1-01 {
+    .N11 {
+        left: 557px;
+        top: 223px;
+    }
+    .N12 {
+        left: 593px;
+        top: 223px;
+    }
+}
+
+.chapter-15-5-01 {
+    .N13 {
+        left: 473px;
+        top: 223px;
+    }
+    .N14 {
+        left: 506px;
+        top: 223px;
+    }
+}
+
+.chapter-16-4-01 {
+    .N15 {
+        left: 506px;
+        top: 223px;
+    }
+    .N16 {
+        left: 570px;
+        top: 223px;
+    }
+}
+
+.chapter-16-4-02 {
+    .N17 {
+        left: 506px;
+        top: 223px;
+    }
+    .N18 {
+        left: 570px;
+        top: 223px;
+    }
+}

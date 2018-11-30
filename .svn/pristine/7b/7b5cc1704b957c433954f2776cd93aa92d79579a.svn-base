@@ -1,0 +1,51 @@
+.modal {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    margin-left: -512px;
+    z-index: 9999;
+    width: 1024px;
+    height: 580px;
+    background: #3e4346;
+    .modal-dialog {
+        position: absolute;
+        width: 335px;
+        height: 170px;
+        background: #fff;
+        left: 50%;
+        margin-left: -167px;
+        top: 50%;
+        margin-top: -85px;
+        button {
+            position: absolute;
+            width: 76px;
+            height: 26px;
+            border: 1px solid rgb(6, 158, 255);
+            border-radius: 3px;
+            text-align: center;
+            line-height: 26px;
+            color: #fff;
+            &.no {
+                color: #069eff;
+                top: 100px;
+                left: 60px;
+            }
+            &.yes {
+                background-color: #009cff;
+                top: 100px;
+                left: 190px;
+            }
+        }
+        img {
+            position: absolute;
+            top: 50px;
+            left: 70px;
+            width: 20px;
+        }
+        p {
+            position: absolute;
+            top: 50px;
+            left: 100px;
+        }
+    }
+}
