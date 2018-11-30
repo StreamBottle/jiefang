@@ -1,0 +1,41 @@
+{
+  "content": [{
+      "video": "http://www.zhangxinxu.com/study/media/cat.mp4",
+      "audio": "",
+      "title": "空白",
+      "textlist": [],
+      "imglist": [],
+      "tiplist": []
+    },
+    {
+      "video": "",
+      "audio": "http://jiangsu.sinaimg.cn/zt/s/yxqxwspds/mobile/bgmcut.mp3",
+      "title": "CVT变速器的发展",
+      "textlist": [
+        "CVT(Continuously Variable Transmission）无极变速器，是连续可变传动比变速器，已经有了一百多年的历史",
+        "在最近的十几年中，CVT技术已经向前迈进了一大步，使得CVT比机械变速器和自动变速器更有竞争力。CVT技术正处于寿命周期的开始阶段，CVT的优点将进一步提高在最近的十几年中，CVT技术已经向前迈进了一大步，使得CVT比机械变速器和自动变速器更有竞争力。CVT技术正处于寿命周期的开始阶段，CVT的优点将进一步提高",
+        "上汽通用五菱为全面提升驾驶品质与降低燃油消耗，在宝骏530车辆上首次使用了全新设计的CVT变速器，由上汽五菱与法孚共同制造"
+      ],
+      "imglist": [
+        "./assets/images/project/img10.png"
+      ],
+      "tiplist": []
+    },
+    {
+      "video": "",
+      "audio": "http://jiangsu.sinaimg.cn/zt/s/yxqxwspds/mobile/bgmcut.mp3",
+      "title": "CVT变速器的特点",
+      "textlist": [
+        "结构简单，体积小",
+        "变速时无冲击感，在驾驶换挡时能保持发动机转速不变，相对于AT驾驶更平稳",
+        "相对于MT操作简单，减轻驾驶员疲劳",
+        "燃油经济性良好"
+      ],
+      "imglist": [
+        "./assets/images/project/img10.png"
+      ],
+      "tiplist": []
+    }
+  ]
+
+}
